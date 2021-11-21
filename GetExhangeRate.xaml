@@ -1,0 +1,249 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetExhangeRate" this:GetExhangeRate.in_WorkDir="C:\\Users\\andal\\Desktop\\UiPath\\Academy" this:GetExhangeRate.in_URL="https://www.x-rates.com/" this:GetExhangeRate.in_LocalPrice="34.56" this:GetExhangeRate.in_LocalCurrency="CNY" this:GetExhangeRate.in_ConvertToCurrency="USD" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_WorkDir" Type="InArgument(x:String)" />
+    <x:Property Name="in_URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_LocalPrice" Type="InArgument(x:String)" />
+    <x:Property Name="in_LocalCurrency" Type="InArgument(x:String)" />
+    <x:Property Name="out_ConvertedPrice" Type="OutArgument(x:String)" />
+    <x:Property Name="in_ConvertToCurrency" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1138,2765</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Bot goes to the url : https://x-rates.com/ and takes echange rate for a local currency" DisplayName="Get exhange rate" sap:VirtualizedContainerService.HintSize="476,2700" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Exchange Rates - X-Rates" sap:VirtualizedContainerService.HintSize="434,2566" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0a1079aa-8186-4b84-ab1f-5425052df511" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,2350" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="FullValue" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '1. Configure Converter'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="0a1079aa-8186-4b84-ab1f-5425052df511" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://x-rates.com/" DesignTimeRectangle="390, 203, 245, 45" ElementType="InputBox" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='amount' /&gt;" Guid="8605ab35-6a7c-4467-b3a0-8fade2d0e091" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPkAAAAxCAYAAAAY9A9JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGFSURBVHhe7dXBacNAEEDR9OQCVGFwAWrCaUPxXTenB59022QcZGQsjELWUTS8gYcOw4Iuf/dlGIYC5CVySO4m8r7vS9d15Xg8AhsU/UbH066vkceibdvSNE3Z7XbABkW/0fE09GvkcQMIHLYvOo6e7yKPp37uALA90bPIITGRQ3Iih+REDsmJHJITOSQnckhO5JCcyCE5kUNyIofkRA7JiRyS+1Hkh49Szu/72R3wPy2OPAKPETnUsi/d+Vy617ldPQsiP5TTpe5TOZ1FDvVE5Je382ueF/uiyA9v8f3+IZFDLdPIx6kf+4LIRyKHuuYiH6de7CKH1TyKfJzfxy5yWM3jyGu1JnJYzXzktRsTOazmNvJntSVyWM3fNPWDyIEtEjkkJ3JITuSQnMghOZFDciKH5EQOyYkckhM5JCdySE7kkJzIITmRQ3Iih+RmI++6rjRNM3sA2I7oOHq+i7zv+9K2rdBhw6Lf6Dh6vot8DD1ugHjqge2JfqeBh5vIgXxEDqkN5ROchUbONrpSbwAAAABJRU5ErkJggg==" InformativeScreenshot="159c876f67257b66c6db1beab2f02589.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Exchange Rates - X-Rates' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="382, 159, 280, 14" FriendlyName="'1. Configure Converter'" FullSelectorArgument="&lt;webctrl aaname=' Configure Converter' parentid='content' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Configure Converter' parentid='content' tag='DIV' type='' check:text='1. Configure Converter' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAASCAYAAACJiWEkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKWSURBVHhe7ZvNjdswEIUFpCS3kEOQkwCXsDmkiMAQ0sBuCXbOaUJ79mUL8EFd+DYRZzjUUB5u7JUUSMEb4ANk/oyGwr5HSsBWhEAgEP8oqvP5TAAAsCQa1fV6JQAAWBINGA4AYHE0HMPp6PfzJ/r8/Iu6mz4AAHgcjZHhtPTyozebwCOG89pQVVWJ5tUZcy+XI9Wc5wt9/zox10eYcy1T4OfQUOv1AbAxNIzhGLN5wHC6U90L0wqjpWaCUDnfoXX7lmbutUyCjQ+GA/4PNHLDYZOJxnOX4XR03DuCvHTU9shvEa2cGFRAoa2m5hAEHtprOl76dnO6qE/nLHd7iDn2DTWpPTeEwaxsfrmnmEnM4RrazGsZnVD4/vsjP1O/Fpvnib6N+t054XnF5+GvCYB1oOF8w3nAcFhUUWBefxRxfRLBDqIT4Wo7m4kVFl8bA7C7fXzl+rvhDPlFmCL2srHMvZb8PqE9rcWtxalZ11yaw2PeqxmAdaAxzXBYJO/9wY/6064v4lIxDkbhG441JE+kt3mc9v53RsqnLLMWMZAwRsyjXEuexxpOcY41JQBWjMZEw8l38UTakT8mUrme2XDS/BLzr4XHhLkhR2wr15LnuTEcbw4MB2wEjfsM5+0nf0h+ebPjBBZD9kdvhSMiLr2GeCIdro0BWGGx0L38ci1zPfGqWeQ1WeZei8zpTzm6jtBWrMWrOdZSmmPHALBiNCYbTkCEOhz3k2gYEZL0qTjKIh2uRVg6hk85IUf20djeO35w9QwnG9eTDOGWOdfCOKbg1zKqORqr9rtzYDhgI2g4hrNyWIjm1QYAsHo0tmE4vJPH3b3Hex0CAKwXje2dcAAAm0P/axyGAwBYnN1ux8BwAACLI4azoz+7VZqfruDcAwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_LocalPrice</CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '↔'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="0a1079aa-8186-4b84-ab1f-5425052df511" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://x-rates.com/" DesignTimeRectangle="390, 288, 245, 45" ElementType="InputBox" FriendlyName="'USD - US Dollar'" FullSelectorArgument="&lt;webctrl id='from' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='from' tag='INPUT' type='text' aaname='' /&gt;" Guid="93b157db-a557-4016-9843-324e5ea97447" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPkAAAAxCAYAAAAY9A9JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALHSURBVHhe7dhdbqMwFEDh7ikLYIVVFsAm6DZo3nmje8hT3jxcA8G/EBJnWq6OpU9KE0M9Iw4m/bjdbgaAXkQOKOdF3nWdadvWXC4XAAck/UrHbtf3yOWDuq5NVVXmdDoBOCDpVzp2Q79HLncAAgeOTzqWnqPIZatPHQDgeKRnIgcUI3JAOSIHlCNyQDkiB5QjckA5IgeUI3JAOSIHlCNyQDkiB5QjckA5IgeU24z8/H015tqas3NQ+v2zaYe33NF/BfMTw52zV6m1hZqfaZI3rqb9TM+PfPXD/N404WvgFxSKfIrop3HmNMOlvcSUPI8N4PnQS60tZCP35k/nfDR0IscfUijydDR2zhTLY+fZp9TaQqnI196PEDn+kDfu5L7ceV6JoNTaQrmYw99nf56Hu46VyP2vAs6Tgcy79qa3p9zx1QDYUCjywWc7XJrLuH6f1+fP7HHPXdSl1hbK7tjZeIMbSW6eDXlZl/d77Lxh5pNfXYCccpGHn01jvmiz8/9H5OFn09jzndxygo3mrIU9v/as3BiAgjYjz118ayHNxqDGY7Pzsxf3+F16Hsndt9Daws9ykS/nHQP11uSuJffae6IYbm3yA5HjzZ6OPHrU3Ag4F549z0aQWYXW5r0/SEfu77zRHPd8mdfhMdE6M+sBXrEd+byjuhf0tCMtj7uJOUEUycjthe2eZ68yawulIh93/uAPZfcoVx69w8jn/4N5V08dAxT0QOTCf3SWEYc5XejOcB9nx0jCUeKvyK+vLWRjjEYcoPdvcm9gmci9x/VhfuPe+Igcb/Jg5ACOisgB5YgcUI7IAeWIHFCOyAHliBxQjsgB5YgcUI7IAeWIHFCOyAHliBxQjsgB5YgcUC4Zedu2pqqq5AEAjkM6lp6jyLuuM3VdEzpwYNKvdCw9R5HPocsdQLZ6AMcj/bqBCy9yAPoQOaDazfwDdqGpdij+6nEAAAAASUVORK5CYII=" InformativeScreenshot="cabb2e9d4cd209fef4f8ec54d389d097.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Exchange Rates - X-Rates' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="499, 339, 27, 30" ElementType="Text" FriendlyName="'↔'" FullSelectorArgument="&lt;webctrl aaname='↔' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='↔' tag='SPAN' type='' check:text='↔' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAiCAYAAACnSgJKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVFhH7ZYhi8MwGIbvP0UFqqrnqqbmpkbFuZrN7WBkZpyp2am56oOqnokp+QFzhULFoDAoFOrelXI7Di5Hk2+iYhEPhL5vedoktHnpug5T4eST4OT2tGec1iecW01mCFnefG3BGUf0WWtzE2jyq4SYMTDW422RXTUdA+zlbYEk5Aj2Ahu2gdgH4GGCgjD9lvIa8m2B5VGhbhUEE1BtDXVcYrFOUWnv+R9reVXex9/ye1ZWqH96ZpA33B85AScn4OS6zAwnJ/BccoWP1xhy+MT+kpcScRhbP4j9mxcJVv4chzwb5Fl+wNxfISk03RFI097kAoHHh8ME9wKIvNH2xiCueQP1HgyHidlOotF2xqFvuEuKyI+QXjSZIXR5T9X/w3XXTXlI/ihOPgnPKu9wA1iXxOqDqaaRAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_LocalCurrency</CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+            </uix:NTypeInto>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V1" />
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '↔'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="0a1079aa-8186-4b84-ab1f-5425052df511" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://x-rates.com/" DesignTimeRectangle="390, 373, 245, 45" ElementType="InputBox" FriendlyName="'EUR - Euro'" FullSelectorArgument="&lt;webctrl id='to' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='to' tag='INPUT' type='text' aaname='' /&gt;" Guid="08ddb13a-5764-433b-a3ec-a0a86b680996" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPkAAAAxCAYAAAAY9A9JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIoSURBVHhe7dhNcoIwGIDh3skDcEKHA3AJvEZ0zw7vwIpdygeFJpBIWulPPt/MPDNVQ5rNS9C3vu8tAL2IHFDOi7xpGmuMsbfbDUCGpF/p2O16iVw+qKrKFkVhT6cTgAxJv9KxG/oSudwBCBzIn3QsPW8il6M+dAGA/EjPRA4oRuSAckQOKEfkgHJEDihH5IByRA4oR+SAckQOKEfkgHJEDihH5IByRA4otxt5ee1sbLSXaU59H17c6+Wamft+dJ3O2HJ1XaqUvQGvLi3ynRCTI9+sU9t2mNJdS+e9dCl7A17dH0f+XKhEDuxTHnlpjUxxnhTcPcnf3b21w5TPdc5mej2Ozpqzux6Qn7TIQ8OJ6/uRH/C4HhrL/9mPfPj2buuPz+b9zN/np/Xdz4H8/O5JHhqB61Lt7y0hcvf/X8bEo9EDOTok8ticTeTunDGoR4/DU2DzCJ32R0e+XY/Ikb8fjNwPLDRnfO+Jx+H9vXGSA4dEPv9Y5Z22q5P60Y3AC+0LUvY2hrzM+Xg6iEW+ivrZmxDwH6RFHhle1N6v0jL8R/FokOPNYLVWoqS9eftqrZFropGv5/PrOvK3GzmAvBE5oByRA8oROaAckQPKETmgHJEDyhE5oByRA8oROaAckQPKETmgHJEDyhE5oByRA8oFIzfG2KIoghcAyId0LD1vIm+axlZVRehAxqRf6Vh63kQ+hy53ADnqAeRH+nUDF17kAPQhckC13r4DrDGjy4zCpa8AAAAASUVORK5CYII=" InformativeScreenshot="7797183a0411c8b1eb650bd910a08243.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Exchange Rates - X-Rates' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="499, 339, 27, 30" ElementType="Text" FriendlyName="'↔'" FullSelectorArgument="&lt;webctrl aaname='↔' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='↔' tag='SPAN' type='' check:text='↔' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAiCAYAAACnSgJKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVFhH7ZYhi8MwGIbvP0UFqqrnqqbmpkbFuZrN7WBkZpyp2am56oOqnokp+QFzhULFoDAoFOrelXI7Di5Hk2+iYhEPhL5vedoktHnpug5T4eST4OT2tGec1iecW01mCFnefG3BGUf0WWtzE2jyq4SYMTDW422RXTUdA+zlbYEk5Aj2Ahu2gdgH4GGCgjD9lvIa8m2B5VGhbhUEE1BtDXVcYrFOUWnv+R9reVXex9/ye1ZWqH96ZpA33B85AScn4OS6zAwnJ/BccoWP1xhy+MT+kpcScRhbP4j9mxcJVv4chzwb5Fl+wNxfISk03RFI097kAoHHh8ME9wKIvNH2xiCueQP1HgyHidlOotF2xqFvuEuKyI+QXjSZIXR5T9X/w3XXTXlI/ihOPgnPKu9wA1iXxOqDqaaRAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">in_ConvertToCurrency</CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+            </uix:NTypeInto>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V1" />
+            <ui:CommentOut sap2010:Annotation.AnnotationText="If we use &quot;Enter&quot; we don`t need this step!" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Currency Calculator►'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0a1079aa-8186-4b84-ab1f-5425052df511" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://x-rates.com/" DesignTimeRectangle="671, 173, 471, 54" ElementType="Text" FriendlyName="'Currency Calculator►'" FullSelectorArgument="&lt;webctrl aaname='Currency Calculator►' parentid='content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Currency Calculator►' parentid='content' tag='A' type='' check:text='Currency Calculator►' /&gt;" Guid="4225dd34-c526-4fed-a106-fef8d605b983" ImageBase64="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" InformativeScreenshot="44e2c660e0b2b7074b92eea87917b6fe.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Exchange Rates - X-Rates' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="690, 158, 448, 14" FriendlyName="'2.Select Action'" FullSelectorArgument="&lt;webctrl aaname='  Select Action ' parentid='content' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='  Select Action ' parentid='content' tag='DIV' type='' check:text='2.&amp;#xD;&amp;#xA;Select Action' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAcQAAAASCAYAAADFT66ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJqSURBVHhe7Zu7beNAEEAJuCS1cBUIVhuu4CKBLsDuQYJTV+BMSgQ4cgUOCLiJud3Z3yy9pOi76Kj3gIHE4e5wFD0MSXUCAAAAghABAAAcCBEAAMCBEAEAAByVEIe3e/n1+y7Gvbx+xRMAAAArpwjx6ygPToQPb4Mevr84KT4dJRzNcZK+66TL0bvMPMNxK93+2qoGnwfZztQ/7d31d4cFPYe126Nf6fvfyuEz5AEA4DaZvGUapsXrU6JKyMhtiZT+Wojnfka4Xmy99PslchvksEtCBAAAmBTiWZ71tumjvMdMm2tisdNjEVUlRJ360hojO5VfzOtaU6slU7/e59NnJvRoe9Dr5+N6QiznzO/yNXdOtqnOwikUAAD+HxpCHOT1KT5HfDnH3AxWaJUogoj6VEKlEs4XITZkZOQX9po6Ksn2hHjKk6HfW9ZozdRX7sGK3PRQ1Tc9aN7WN78LAABWwTch6rPDRdPhd/R2qRejkVqatkIEqWTxVdNhCiekqWeFk0J01zIy9n0kYZVnhZa2EIuQA3lvdd2R6AEAYBVUQixvmf7DG6ZZZkU0Y2ohNgT3QyFqvbFYo9gQIgAALKEIMb5l6oX4/BFziY/Hdl5lMhKOl5m5LZkFY6RSxFPv17zuDfkgHSOvphBbghpJLk2PeX9biHV90wNCBABYPVmI9X8QU8RJcVKIDp3m7HRmhRWkEvJlWqwmsWq/2WvzSWgpZ6a4kLPXDNjJ0H9P/SWRhZzvyQjRob3FtVn0CBEAYPU0XqoBAAC4PRAiAACAAyECAAA4usvlIgRBEARx69FtNhshCIIgiNuOjfwBl3NXGPdceUAAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <uix:NGetText DisplayName="Get Text 'Currency Calculator►'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="0a1079aa-8186-4b84-ab1f-5425052df511" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.x-rates.com/calculator/?from=USD&amp;to=EUR&amp;amount=1" DesignTimeRectangle="730, 287, 353, 65" FriendlyName="'0.871919 EUR'" FullSelectorArgument="&lt;webctrl aaname='0.8719' tag='SPAN' class='ccOutputRslt' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='ccOutputRslt' type='' /&gt;" Guid="e82e2ae4-ca70-46c5-a536-69e4c7db6c80" ImageBase64="" InformativeScreenshot="dd0b73e8f28992a050ec557dfd279b0f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Exchange Rate US Dollar to Euro (Currency Calculator) - X-Rates' /&gt;" SearchSteps="Selector, FuzzySelector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="370, 505, 49, 38" ElementType="Text" FriendlyName="'Currency Calculator►'" FullSelectorArgument="&lt;webctrl aaname='Currency Calculator►' parentid='content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Currency Calculator►' parentid='content' tag='A' type='' check:text='Currency Calculator►' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADUAAAAqCAYAAAATZhM+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHoSURBVGhD7ZaxSgNBEIbzUoaUPoDP4Bv4AvoEFqKB66yDjUKQpLAQMZWQa5QrgihCBJsEGyNct94/3BybZQIDGfA2bPFxy86xM9/t7N11Ft8/bj6fu7IsdwK4kFRRFOINMQIXksrzXLwhRuCSpGIgScVCkoqFJLWJ7sXIdc+NqdaUcmmwkUIRZ7duPxubwGJSLg02UrXQavW7NW9fC1ovSQW0Umrv9JrWlHJpSFKboHapuHt535qr6WuznpRLg5kUnq4VJPXvZwqv4PrpSkVq4TXaI1V9LNE6OBPZpFgvsOJklFMMLUbfIi92OJi459kHgTGvJ+XSYCNVFXB087R24JviKsKXCEnXMfAw+2xiEKM/lNZK1cVBarFcNjGSqmPAl8KY56VcGsykAFoMReHKcwyk0XoQovbzYgeX99S6iGPM81IuDaZS1ki5NJhKYQfQduFOMIj5O+GD+TAm5dJgJoWC8HbDucA1FPPPjX/eANqVY/55k3JpMJPyCwM4Q1wchP0Y/TXUMcAPA2DM81IuDaY7xW84XMNW8gv3hQF2h2O+sJRLg5kUgAh2LBQCaEfEwtZjIBrKSrk0mEpZI+XSYCLVNpJULCSpWEhSsZCkYmG3pbLxo+scD3YCcoFUrz8Ub4iRXn/o/gC/W2CSWz5QYgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">FullValue</CSharpReference>
+                </OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">out_ConvertedPrice</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">FullValue.Substring(0, FullValue.IndexOf(".")+3)</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7" xml:space="preserve">"Converted price is -" + out_ConvertedPrice +
+"\n Full - " + FullValue</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADAUExURQCEtw2Ku9Lp8guJupHK4BSOvQOFuEqozBiQvg+LuxePvcbk71iu0KTT5avW5/r9/u32+u73+pPL4VKsznzA2imYw2Cy0iGUwLHZ6b3f7AaHufT6/NDo8pzP44rH3nC614/J34HC20mnzKrW5/v9/qLS5dbr8wqJupTL4TSdxtvu9ePx93S82Nrt9eHx90Kkyp3Q4/3+/gyKumW11D6iyQWGuGi21G251v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAPEuap0AAAA5dFJOU///////////////////////////////////////////////////////////////////////////ADqsZUAAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVChTLY5XFgIxDAO1FVh67733Drr/yZAT/JGMJn52EL4fwZSunkEUncE5gJ7lsmBGkDkgrZFH5RJNrArAnmwDefVJsKi3cawj/Au2FFQTYyf4Ulz2HXrBAfD15EUjVUvs0AmbqrKZTlS1d3H1W53Qz8C7Dv3LxE5YIW+61iY2go41NwUXor4FupbJDEiG+CDIDl6MkgCnHw5RH+9Uz/eeAAAAAElFTkSuQmCC" InformativeScreenshot="d8e0384a75762ffb980353ce278f44d7.png" Selector="&lt;html app='msedge.exe' title='Exchange Rates - X-Rates'/&gt;" Url="https://x-rates.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
